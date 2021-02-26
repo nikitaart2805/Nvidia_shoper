@@ -1,8 +1,10 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.headless = True
 
-# For using chrome
-browser = webdriver.Chrome('/Users/nikitaartemev/PycharmProjects/pythonPARSER/chromedriver')
+browser = webdriver.Chrome('/usr/bin/chromedriver')
 
 # BestBuy RTX 3060 Ti webpage
 browser.get('https://www.bestbuy.com/site/amana-6-5-cu-ft-11-cycle-electric-dryer-white/3073087.p?skuId=3073087')
