@@ -18,7 +18,7 @@ driver = webdriver.Chrome(options=options)
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 
-url = 'https://github.com/'
+
 
 options = Options()
 options.add_argument("--headless")
@@ -28,7 +28,7 @@ browser = webdriver.Chrome(options=options)
 
 # BestBuy RTX 3060 Ti webpage
 browser.get('https://www.bestbuy.com/site/amana-6-5-cu-ft-11-cycle-electric-dryer-white/3073087.p?skuId=3073087')
-
+print("script started ")
 
 def authorization(login, password, authButton):
     while not authButton:
@@ -103,6 +103,7 @@ def check_out(FN=None, LN=None, adress=None, city=None, zip_code=None, phone=Non
 
 
 def main():
+    print("main_block started")
     buyButton = False
     authButton = False
     FN = 'Mikita'
@@ -118,5 +119,6 @@ def main():
     browser.stop()
 
 if __name__ == '__main__':
+    print("try to start main block")
     main()
 
