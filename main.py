@@ -1,6 +1,6 @@
 import time
-from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
 
 options = Options()
 options.add_argument("--headless")
@@ -11,7 +11,20 @@ options.add_argument("start-maximized")
 options.add_argument("enable-automation")
 options.add_argument("--disable-infobars")
 options.add_argument("--disable-dev-shm-usage")
-browser = webdriver.Chrome('/usr/bin/chromedriver')
+
+driver = webdriver.Chrome(options=options)
+
+
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+
+url = 'https://github.com/'
+
+options = Options()
+options.add_argument("--headless")
+options.add_argument("window-size=1400,1500")
+
+browser = webdriver.Chrome(options=options)
 
 # BestBuy RTX 3060 Ti webpage
 browser.get('https://www.bestbuy.com/site/amana-6-5-cu-ft-11-cycle-electric-dryer-white/3073087.p?skuId=3073087')
