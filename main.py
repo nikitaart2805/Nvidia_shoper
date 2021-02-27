@@ -1,9 +1,12 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from pyvirtualdisplay import Display
 options = Options()
 options.headless = True
 
+display = Display(visible=0, size=(800, 800))
+display.start()
 browser = webdriver.Chrome('/usr/bin/chromedriver')
 
 # BestBuy RTX 3060 Ti webpage
