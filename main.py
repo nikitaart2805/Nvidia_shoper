@@ -1,12 +1,16 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from pyvirtualdisplay import Display
-options = Options()
-options.headless = True
 
-display = Display(visible=0, size=(800, 800))
-display.start()
+options = Options()
+options.add_argument("--headless")
+options.add_argument("window-size=1400,1500")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("start-maximized")
+options.add_argument("enable-automation")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-dev-shm-usage")
 browser = webdriver.Chrome('/usr/bin/chromedriver')
 
 # BestBuy RTX 3060 Ti webpage
@@ -97,7 +101,9 @@ def main():
     authorization('mikitaart2805@gmail.com', 'Barakok113', authButton)
     buyer(buyButton)
     check_out(FN, LN, adress, city, zip_code, phone)
-
+    browser.quit()
+    browser.stop()
 
 if __name__ == '__main__':
     main()
+
